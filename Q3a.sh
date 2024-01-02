@@ -14,3 +14,6 @@ else
 echo "not directory"
 fi
 done
+
+# 3b 3c 3d covered in lab
+# programs are different than manual 
