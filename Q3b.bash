@@ -1,23 +1,26 @@
-# Create a shell script to find a file with particular name, (show separate outputs for both the conditions)
+# 3b.Create a shell script to find a file with particular name, (show separate outputs for both the conditions)
+#     (i) if that file exists then rename the existing file and create an empty file with that name.
+#     (ii) if that file does not exist then create a new empty file. (iii)If both the conditions done together.
 
-#     • if that file exists then rename the existing file and create an empty file with that name.
-#     • if that file does not exist then create a new empty file.
-#     • If both the conditions done together.
+    
+#!/bin/bash
 
-# Create a file named rit.txt with below contents
+# Set the desired file name file_name="example.txt"
 
-# Hi
-# Hello
-# Welcome to MSRIT
+# Check if the file exists
+if [ -e "$file_name" ] then
+# If the file exists, rename it and create an empty file with the original name echo "File '$file_name' exists."
 
-#! /bin/bash
-cd /home/ritadmin/sample
-filename="rit.txt"
-if [ -e $filename ]
-then
-echo "moving the contents of rit.txt to rit.txt_old"
-mv -f  $filename $filename"_old"
-touch $filename
+# Rename the existing file
+mv "$file_name" "${file_name}_old"
+echo "Existing file renamed to '${file_name}_old'."
+
+# Create an empty file with the original name touch "$file_name"
+echo "New empty file created with the name '$file_name'."
+
+echo "Both conditions done together." else
+# If the file does not exist, create a new empty file touch "$file_name"
+echo "File '$file_name' does not exist. New empty file created."
 fi
 
 
