@@ -26,9 +26,10 @@ while [ $i -le 10 ]; do
     j=1
     while [ $j -le 20 ]; do
         touch "MSRITStudentDetails$j"
-        ((j++))
+        j=$(($j+1))  # Increment j using arithmetic expansion
     done
     cd ..
-    ((i++))
+    i=$(($i+1))  # Increment i using arithmetic expansion
 done
+
 
