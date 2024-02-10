@@ -66,11 +66,17 @@ return 0;
 
 int main(int argc, char* argv[])
 {
-This line declares the main function, which is the entry point of the program. 
-It accepts command-line arguments argc (the number of arguments that are passed) and 
-argv (an array of strings, each is the individual argument).
+//This line declares the main function, which is the entry point of the program. 
+// It accepts command-line arguments argc (the number of arguments that are passed) and 
+// argv (an array of strings, each is the individual argument).
 
-./my_program hello world, argc would be 3 because we gave the program three pieces of information (./my_program, hello, world).
-And argv would be an array (a list) of strings that looks like this: ["./my_program", "hello", "world"]
+// ./my_program hello world
+// , argc would be 3 because we gave the program three pieces of information (./my_program, hello, world).
+// And argv would be an array (a list) of strings that looks like this: ["./my_program", "hello", "world"]
 
+struct dirent *dir;   // This struct pointer points to information about one item (like a file or folder) inside a directory
+struct stat mystat;   // This struct stores details about a specific file, like its size, owner, permissions, etc.
+DIR *dp;              // This box holds all the items (like files and folders) inside a directory at once
+
+// while (dir = readdir(dp)) {} would read each line in the directory
 
