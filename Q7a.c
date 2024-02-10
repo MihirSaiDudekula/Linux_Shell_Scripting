@@ -53,4 +53,16 @@ exit(EXIT_FAILURE);
 listFiles(argv[1]);
 return 0;
 }
-    
+
+#include<unistd.h>
+// bringing in a set of tools that help us interact with the operating system.
+// unistd.h contains information about basic system calls and constants related to operating system functionalities.
+#include<fcntl.h>
+// fcntl.h contains functions and constants for file control operations, like opening and manipulating files.
+#include<dirent.h>
+// dirent.h provides functions and data structures for reading and manipulating directory entries.
+#include<time.h>
+// time.h contains functions and data structures for working with time, like getting the current time or formatting time values.
+
+
+
