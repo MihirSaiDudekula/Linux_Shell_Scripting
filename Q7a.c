@@ -64,5 +64,13 @@ return 0;
 #include<time.h>
 // time.h contains functions and data structures for working with time, like getting the current time or formatting time values.
 
+int main(int argc, char* argv[])
+{
+This line declares the main function, which is the entry point of the program. 
+It accepts command-line arguments argc (the number of arguments that are passed) and 
+argv (an array of strings, each is the individual argument).
+
+./my_program hello world, argc would be 3 because we gave the program three pieces of information (./my_program, hello, world).
+And argv would be an array (a list) of strings that looks like this: ["./my_program", "hello", "world"]
 
 
