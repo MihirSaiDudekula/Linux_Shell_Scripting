@@ -44,3 +44,37 @@ exit(EXIT_FAILURE);
 removeEmptyFiles(argv[1]);
 return 0;
 }
+
+#include <stdio.h>
+#include <unistd.h> #include <dirent.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+
+int main()
+{
+        DIR *dp;
+        stuct dirent *dir;
+        int fd,n;
+
+        dp=opendir(".");
+        if(dp)
+        {
+                while((dir=readdir(dp))!=NULL)
+                {
+                        fd=open(dir->d_name,O_RDWR,0777);
+                    // This line opens the file specified by dir->d_name for reading and writing (O_RDWR) with the file permissions 0777 (in                          octal notation, representing read, write, and execute permissions for user, group, and others). The file descriptor is                         assigned to fd.
+                        n=lseek(fd,0,SEEK_END);
+                  
+                  // if "example.txt" is 28 bytes long (including the newline character), lseek will return 28, indicating that the file is 28                      bytes in size.After this line executes, the variable n will contain the size of the file "example.txt" in bytes.
+                        if(!n)
+                        {
+                                unlink(dir->d_name);
+                          //If the file size is zero (indicating an empty file), the unlink function is called to remove (delete) the file                                 specified by dir->d_name.
+
+                        }
+
+                }
+
+        }
+
+}.
