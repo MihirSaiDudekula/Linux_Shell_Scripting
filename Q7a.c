@@ -93,15 +93,15 @@ int main(int argc, char* argv[])
                         // it takes in 2 arguments, directory name and struct where to store the stats
                         // dir->d_name is the directory name
                         // &mystat is where the stats will be stored
-                        printf("%ld\t",mystat.st_ino);
-                        printf("%d\t",mystat.st_uid);
-                        printf("%d\t",mystat.st_gid);
-                        printf("%ld\t",mystat.st_blksize);
-                        printf("%ld\t",mystat.st_blocks);
-                        printf("%ld\t",mystat.st_size);
-                        printf("%lu\t",mystat.st_nlink);
-                        printf("%s\t,ctime(&mystat.st_atime) %s\t,dir->d_name);
-                        printf("\t");
+                        printf("%ld\t", mystat.st_ino);
+                        printf("%d\t", mystat.st_uid);
+                        printf("%d\t", mystat.st_gid);
+                        printf("%ld\t", mystat.st_blksize);
+                        printf("%ld\t", mystat.st_blocks);
+                        printf("%ld\t", mystat.st_size);
+                        printf("%lu\t", mystat.st_nlink);
+                        printf("%s\t%s\t%s\t", ctime(&mystat.st_atime), dir->d_name, "\t");
+
                         printf("\n File Permissions User\n");
                         printf((mystat.st_mode & S_IRUSR)? "r":"-");
                         printf((mystat.st_mode & S_IWUSR)? "w":"-");
