@@ -104,6 +104,8 @@ int main(int argc, char* argv[])
 
                         printf("\n File Permissions User\n");
                         printf((mystat.st_mode & S_IRUSR)? "r":"-");
+                        // checking if the read permission is set for the owner of the file represented by the mystat structure. 
+                        // If the result is non-zero, it means the read permission is set.
                         printf((mystat.st_mode & S_IWUSR)? "w":"-");
                         printf((mystat.st_mode & S_IXUSR)? "x":"-");
                         printf("\n");
