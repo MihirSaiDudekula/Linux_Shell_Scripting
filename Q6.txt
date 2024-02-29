@@ -1,0 +1,8 @@
+// replace all instance 
+sed -i 's/old_word/new_word/g' filename.txt
+
+// replace only in second line 
+sed '2s/old_word/new_word/g' filename.txt
+
+sed 's/\(.*\)Programming/\1scripting/' 1.txt
+
