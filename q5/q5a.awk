@@ -1,7 +1,7 @@
 {split($0, arr, "-")
        if((arr[1]>31) || (arr[1]<1) || (arr[2]>12) || (arr[2]<1))
        {
-	       print "invalid"
+	       print "the date entered is invalid"
 	       exit 0
 
 	}	       
