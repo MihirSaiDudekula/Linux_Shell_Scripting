@@ -1,12 +1,16 @@
-BEGIN{
-	print "Removing Duplicated lines"
+BEGIN {
+    print "Removing Duplicated lines"
 }
+
 {
-	line[++no]=$0
-	}
-	END{
-		for(i=1;i<=no;i++)
-		{
-			flag=1
-			}
-		}
+    line[$0]++
+}
+
+END {
+    for (line in line) {
+        if (line[line] == 1) {
+            print line > "out13a.txt"
+        }
+    }
+}
+
