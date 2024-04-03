@@ -1,0 +1,21 @@
+make sample.xml of this format, this is one entry
+
+<student>
+<name>name</name>
+<usn>usn</usn>
+<dept>dept</dept>
+</student>
+<dept>
+<name>name</name>
+<id>id</id>
+<total>total</total>
+
+
+1) sed "/dept/,/\dept/d" sample.xml >student.xml
+2) sed '/<dept>/,/<\/dept>/ s/<name>/<deptname>/g' sample.xml > dept.xml
+3) sed -n '/usn/{s/.*<usn>//;s/<\/usn.*//;p;}' sample.xml > usn.txt
+
+or
+1)grep -v "<dept>" sample.xml > student.xml
+2)sed '/<dept>/,/<\/dept>/ s/<name>/<deptname>/g' sample.xml > dept.xml
+3)grep -oP '<usn>\K.*?(?=<\/usn)' sample.xml > usn.txt
