@@ -15,7 +15,7 @@ if ((dir = opendir(path)) == NULL) {
 perror("Error opening directory");
 exit(EXIT_FAILURE);
 }
-// Print header
+// Print head
 printf("%-10s %-8s %-8s %-8s %-12s %s\n", "Permissions", "Links", "Owner", "Group", "Size",
 "Last Modified");
 // Read each entry in the directory
