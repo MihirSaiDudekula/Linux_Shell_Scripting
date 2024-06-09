@@ -1,5 +1,5 @@
 # 3b.Create a shell script to find a file with particular name, (show separate outputs for both the conditions)
-#     (i) if that file exists then rename the existing file and create an empty file with that name.
+#     (i) if the file exists then rename the existing file and create an empty file with that name.
 #     (ii) if that file does not exist then create a new empty file. (iii)If both the conditions done together.
 
 #!/bin/bash
